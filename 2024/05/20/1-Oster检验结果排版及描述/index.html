@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>【Stata】 Oster检验结果排版及描述 - LxxCandy</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#95c2e1"><meta name="application-name" content="LxxCandy"><meta name="msapplication-TileImage" content="assets/favo.jpg"><meta name="msapplication-TileColor" content="#95c2e1"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="LxxCandy"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="稳健性之遗漏变量检验"><meta property="og:type" content="blog"><meta property="og:title" content="LxxCandy"><meta property="og:url" content="https://lxxcandy.github.io/"><meta property="og:site_name" content="LxxCandy"><meta property="og:description" content="稳健性之遗漏变量检验"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://lxxcandy.github.io/img/og_image.png"><meta property="article:published_time" content="2024-05-20T14:07:45.000Z"><meta property="article:modified_time" content="2024-06-14T09:35:43.048Z"><meta property="article:author" content="LxxCandy"><meta property="article:tag" content="Stata"><meta property="article:tag" content="写作"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://lxxcandy.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://lxxcandy.github.io/2024/05/20/1-Oster%E6%A3%80%E9%AA%8C%E7%BB%93%E6%9E%9C%E6%8E%92%E7%89%88%E5%8F%8A%E6%8F%8F%E8%BF%B0/"},"headline":"【Stata】 Oster检验结果排版及描述","image":["https://lxxcandy.github.io/img/og_image.png"],"datePublished":"2024-05-20T14:07:45.000Z","dateModified":"2024-06-14T09:35:43.048Z","author":{"@type":"Person","name":"LxxCandy"},"publisher":{"@type":"Organization","name":"LxxCandy","logo":{"@type":"ImageObject","url":"https://lxxcandy.github.io/assets/favo.jpg"}},"description":"稳健性之遗漏变量检验"}</script><link rel="canonical" href="https://lxxcandy.github.io/2024/05/20/1-Oster%E6%A3%80%E9%AA%8C%E7%BB%93%E6%9E%9C%E6%8E%92%E7%89%88%E5%8F%8A%E6%8F%8F%E8%BF%B0/"><link rel="alternate" href="/atom.xml" title="LxxCandy" type="application/atom+xml"><link rel="icon" href="/assets/favo.jpg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/assets/favo.jpg" alt="LxxCandy" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">文章</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-05-20T14:07:45.000Z" title="2024/5/20 22:07:45">2024-05-20</time>发表</span><span class="level-item"><time dateTime="2024-06-14T09:35:43.048Z" title="2024/6/14 17:35:43">2024-06-14</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/">备忘录</a></span><span class="level-item">5 分钟读完 (大约805个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">【Stata】 Oster检验结果排版及描述</h1><div class="content"><blockquote>
+<p>稳健性之遗漏变量检验</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="1-基本原理"><a href="#1-基本原理" class="headerlink" title="1 基本原理"></a>1 基本原理</h2><ul>
+<li><p>通过设定可达到的最大 $R^2 (Rmax)$ 和未观测变量的相对重要性 ($\delta $)来估计遗漏变量可能造成的影响，并判断处理效应估计值的稳定性。</p>
+</li>
+<li><p>根据Oster (2019)的建议，我们假设$Rmax$是基准回归模型中$R^2$的1.3倍，而未观测变量对因变量的影响至少与已观测变量同等重要，即$\delta &#x3D; 1$，进一步采用估计量$\beta^\star &#x3D;\beta^\star (Rmax, \delta )$得到真实系数的一致估计。</p>
+</li>
+</ul>
+<h2 id="2-操作代码"><a href="#2-操作代码" class="headerlink" title="2 操作代码"></a>2 操作代码</h2><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//计算Uncontrolled结果</span></span><br><span class="line">reghdfe Y X, noa <span class="keyword">vce</span>(<span class="keyword">cl</span> ind3#year) level(99.5)</span><br><span class="line"></span><br><span class="line"><span class="comment">//计算Controled结果与置信区间</span></span><br><span class="line">reghdfe Y X <span class="variable">$controls</span> ,a( ind3#year ) <span class="keyword">vce</span>(<span class="keyword">cl</span> ind3#year) level(99.5)</span><br><span class="line"></span><br><span class="line"><span class="comment">//计算true beta与beta为0时的delta</span></span><br><span class="line"><span class="keyword">local</span> r = <span class="built_in">e</span>(r2) * 1.3</span><br><span class="line">psacalc2 beta X, delta(1) rmax(<span class="symbol">`r&#x27;</span>)</span><br><span class="line">psacalc2 delta X, beta(0) rmax(<span class="symbol">`r&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-结果排版"><a href="#3-结果排版" class="headerlink" title="3 结果排版"></a>3 结果排版</h2><table>
+<thead>
+<tr>
+<th>Dependent variable</th>
+<th align="center"><em>Y</em></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Uncontrolled coefficients</td>
+<td align="center">-0.0130</td>
+</tr>
+<tr>
+<td>Uncontrolled R²</td>
+<td align="center">0.001</td>
+</tr>
+<tr>
+<td>Controled coefficients</td>
+<td align="center">0.0073***</td>
+</tr>
+<tr>
+<td>Controled R²</td>
+<td align="center">0.405</td>
+</tr>
+<tr>
+<td>99.5% Confidence interval</td>
+<td align="center">[-0.0005,0.0152]</td>
+</tr>
+<tr>
+<td>Control variables</td>
+<td align="center">YES</td>
+</tr>
+<tr>
+<td>Industry-Year fixed effect</td>
+<td align="center">YES</td>
+</tr>
+<tr>
+<td>“True” $\beta$</td>
+<td align="center">0.0192</td>
+</tr>
+<tr>
+<td><em>$\delta$</em> for  $\beta$  &#x3D; 0</td>
+<td align="center">-0.8627</td>
+</tr>
+</tbody></table>
+<p>按顺序需要手动录入以下数据：</p>
+<ul>
+<li>Uncontrolled下的X回归系数与R-squared</li>
+</ul>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">. reghdfe Y X, noa <span class="keyword">vce</span>(<span class="keyword">cl</span> ind3#year) level(99.5)</span><br><span class="line">(MWFE estimator converged <span class="keyword">in</span> 1 iterations)</span><br><span class="line"></span><br><span class="line">HDFE Linear regression                            Number of obs   =     16,752</span><br><span class="line">Absorbing 1 HDFE group                            <span class="built_in">F</span>(   1,    847) =       2.47</span><br><span class="line">Statistics robust to heteroskedasticity           <span class="keyword">Prob</span> &gt; F        =     0.1167</span><br><span class="line">                                                  R-squared       =     0.0013</span><br><span class="line">                                                  Adj R-squared   =     0.0012</span><br><span class="line">                                                  Within R-sq.    =     0.0013</span><br><span class="line">Number of clusters (ind3#year) =        848       Root MSE        =     6.2419</span><br><span class="line"></span><br><span class="line">                            (Std. <span class="keyword">err</span>. adjusted <span class="keyword">for</span> 848 clusters <span class="keyword">in</span> ind3#year)</span><br><span class="line">------------------------------------------------------------------------------</span><br><span class="line">             |               Robust</span><br><span class="line">           Y | Coefficient  std. <span class="keyword">err</span>.      t    P&gt;|t|   [99.5% <span class="keyword">conf</span>. interval]</span><br><span class="line">-------------+----------------------------------------------------------------</span><br><span class="line">           X |  -.0130469   .0083091    -1.57   0.117    -.0364321    .0103383</span><br><span class="line">       _cons |   8.291464   .2427002    34.16   0.000     7.608406    8.974521</span><br><span class="line">------------------------------------------------------------------------------</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Controled下的X回归系数、R-squared与置信区间</li>
+</ul>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">. reghdfe Y X <span class="variable">$controls</span> ,a( ind3#year ) <span class="keyword">vce</span>(<span class="keyword">cl</span> ind3#year) level(99.5)</span><br><span class="line">(MWFE estimator converged <span class="keyword">in</span> 1 iterations)</span><br><span class="line"></span><br><span class="line">HDFE Linear regression                            Number of obs   =     16,752</span><br><span class="line">Absorbing 1 HDFE group                            <span class="built_in">F</span>(  13,    847) =      46.08</span><br><span class="line">Statistics robust to heteroskedasticity           <span class="keyword">Prob</span> &gt; F        =     0.0000</span><br><span class="line">                                                  R-squared       =     0.4049</span><br><span class="line">                                                  Adj R-squared   =     0.3727</span><br><span class="line">                                                  Within R-sq.    =     0.0814</span><br><span class="line">Number of clusters (ind3#year) =        848       Root MSE        =     4.9466</span><br><span class="line"></span><br><span class="line">                            (Std. <span class="keyword">err</span>. adjusted <span class="keyword">for</span> 848 clusters <span class="keyword">in</span> ind3#year)</span><br><span class="line">------------------------------------------------------------------------------</span><br><span class="line">             |               Robust</span><br><span class="line">           Y | Coefficient  std. <span class="keyword">err</span>.      t    P&gt;|t|   [99.5% <span class="keyword">conf</span>. interval]</span><br><span class="line">-------------+----------------------------------------------------------------</span><br><span class="line">           X |   .0073397   .0027781     2.64   0.008     -.000479    .0151585</span><br><span class="line">         Lev |  -.1551993   .2676344    -0.58   0.562    -.9084319    .5980334</span><br><span class="line">     firmage |  -.0206417   .1378441    -0.15   0.881    -.4085913    .3673078</span><br><span class="line">        Size |   1.397631    .061951    22.56   0.000     1.223276    1.571987</span><br><span class="line">        sfee |   1.895896   .5163247     3.67   0.000     .4427476    3.349045</span><br><span class="line">        Dual |   .1007562   .0789137     1.28   0.202    -.1213394    .3228517</span><br><span class="line">        Top1 |   -.012556   .0028019    -4.48   0.000    -.0204416   -.0046704</span><br><span class="line">       Indep |  -.0170681   .0075772    -2.25   0.025    -.0383933    .0042572</span><br><span class="line">      occupy |  -2.832035   2.223062    -1.27   0.203     -9.08864     3.42457</span><br><span class="line">        Cash |   1.180776   .4373728     2.70   0.007    -.0501698    2.411722</span><br><span class="line">         Soe |  -1.301147   .1252125   -10.39   0.000    -1.653546   -.9487476</span><br><span class="line">         Gdp |   .6944393   .1217796     5.70   0.000     .3517018    1.037177</span><br><span class="line">      People |   -.635223   .1217548    -5.22   0.000    -.9778907   -.2925554</span><br><span class="line">       _cons |  -3.086463   .9588209    -3.22   0.001    -5.784976    -.387949</span><br><span class="line">------------------------------------------------------------------------------</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Estimate出的true Beta</li>
+</ul>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"> psacalc2 beta X, delta(1) rmax(<span class="symbol">`r&#x27;</span>)</span><br><span class="line"></span><br><span class="line">                 ---- Treatment Effect Estimate ----</span><br><span class="line">             |     Estimate           Sq. difference      <span class="keyword">Bias</span> changes</span><br><span class="line">             |                      from controlled beta    direction</span><br><span class="line">-------------+----------------------------------------------------------------</span><br><span class="line">Beta         |       0.01920              .000141             </span><br><span class="line">Alt. sol. 1  |      -2.18561                 4.81             Yes</span><br><span class="line">Alt. sol. 2  |                                                </span><br><span class="line">-------------+----------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">                 ---- Inputs from Regressions ----</span><br><span class="line">             |      Coeff.            R-Squared</span><br><span class="line">-------------+----------------------------------------------------------------</span><br><span class="line">Uncontrolled |       -0.01305         0.001</span><br><span class="line">Controlled   |        0.00734         0.405</span><br><span class="line">-------------+----------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">                 ---- Other Inputs ----</span><br><span class="line">-------------+----------------------------------------------------------------</span><br><span class="line">R_max        |   0.526</span><br><span class="line">Delta        |   1.000</span><br><span class="line">Unr. Controls|   </span><br><span class="line">-------------+----------------------------------------------------------------</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Estimate出的delta</li>
+</ul>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> psacalc2 delta X, beta(0) rmax(<span class="symbol">`r&#x27;</span>)</span><br><span class="line"></span><br><span class="line">                 ---- Bound Estimate ----</span><br><span class="line">-------------+----------------------------------------------------------------</span><br><span class="line">delta        |      -0.86273</span><br><span class="line">-------------+----------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">                 ---- Inputs from Regressions ----</span><br><span class="line">             |      Coeff.                      R-Squared</span><br><span class="line">-------------+----------------------------------------------------------------</span><br><span class="line">Uncontrolled |       -0.01305                   0.001</span><br><span class="line">Controlled   |        0.00734                   0.405</span><br><span class="line">-------------+----------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">                 ---- Other Inputs ----</span><br><span class="line">-------------+----------------------------------------------------------------</span><br><span class="line">R_max        |   0.526</span><br><span class="line">Beta         |    0.000000</span><br><span class="line">Unr. Controls|   </span><br><span class="line">-------------+----------------------------------------------------------------</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-结果判断与描述"><a href="#4-结果判断与描述" class="headerlink" title="4 结果判断与描述"></a>4 结果判断与描述</h2><p>oster有多种判断方法，满足其一就可以：</p>
+<ul>
+<li>true $\beta$ 与基准回归系数相比，绝对值更大，且符号相同<ul>
+<li>表明X对Y的真实影响可能大于基准模型中的回归系数，且不会出现符号相反的情况</li>
+</ul>
+</li>
+<li>$\delta$  大于1或小于0<ul>
+<li>大于1表明：不可观测变量的重要性需要是可观测变量的 $\delta$ 倍时，才会产生零处理效果，这种情况较难成立，验证了系数的稳定性</li>
+<li>小于0表明：经偏差调整后的估计系数应大于基准回归中得到的系数</li>
+</ul>
+</li>
+<li>true $\beta$ 落在置信区间内</li>
+<li>true $\beta$ 与Controled coefficients（基准回归中X的系数）形成的区间落在置信区间内<ul>
+<li>说明并不存在与本文解释变量同等重要的遗漏变量影响本文结论</li>
+</ul>
+</li>
+<li>true $\beta$ 与Controled coefficients（基准回归中X的系数）构成的区间不包含0<ul>
+<li>说明遗漏变量不太可能将处理效应的真实值推至0</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><font color="#2b7cd3" size="4" face="微软雅黑">作话：mark住下次不要再忘了…</font></p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>【Stata】 Oster检验结果排版及描述</p><p><a href="https://lxxcandy.github.io/2024/05/20/1-Oster检验结果排版及描述/">https://lxxcandy.github.io/2024/05/20/1-Oster检验结果排版及描述/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>LxxCandy</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2024-05-20</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2024-06-14</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Stata/">Stata</a><a class="link-muted mr-2" rel="tag" href="/tags/%E5%86%99%E4%BD%9C/">写作</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2024/06/01/3-%E4%B8%80%E5%91%A8%E4%B8%80%E5%8C%97%E6%A0%B8DDL%E8%BF%9C%E7%A6%BB%E6%88%91%EF%BC%88%E4%B8%8A%EF%BC%89/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">【Stata】 一周一北核 DDL远离我 —— 数据篇</span></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="SOHUCS" sid="2024/05/20/1-Oster检验结果排版及描述/"></div><script charset="utf-8" src="https://changyan.sohu.com/upload/changyan.js"></script><script>window.changyan.api.config({appid: 'cyxiyLaBg',conf: 'prod_ab6b2b4a4f094ae107199274d893073c'});</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/assets/favo.jpg" alt="LxxCandy"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">LxxCandy</p><p class="is-size-6 is-block">种一棵树最好的时间是十年前，其次是现在</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">1</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">2</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/LxxCandy" target="_blank" rel="me noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="小红书" href="https://www.xiaohongshu.com/user/profile/5b876062faff1300010c7166"><img src="\image\xhs.svg" style="height: 20px;width: 20px;"></a></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/"><span class="level-start"><span class="level-item">备忘录</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li></ul></div></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2024/06/"><span class="level-start"><span class="level-item">六月 2024</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/05/"><span class="level-start"><span class="level-item">五月 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Stata/"><span class="tag">Stata</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%86%99%E4%BD%9C/"><span class="tag">写作</span><span class="tag">1</span></a></div></div></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#1-基本原理"><span class="level-left"><span class="level-item">1 基本原理</span></span></a></li><li><a class="level is-mobile" href="#2-操作代码"><span class="level-left"><span class="level-item">2 操作代码</span></span></a></li><li><a class="level is-mobile" href="#3-结果排版"><span class="level-left"><span class="level-item">3 结果排版</span></span></a></li><li><a class="level is-mobile" href="#4-结果判断与描述"><span class="level-left"><span class="level-item">4 结果判断与描述</span></span></a></li></ul></div></div><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-01T14:07:45.000Z">2024-06-01</time></p><p class="title"><a href="/2024/06/01/2-2SLS%E5%B7%A5%E5%85%B7%E5%8F%98%E9%87%8F%E6%B3%95%E6%93%8D%E4%BD%9C/">【Stata】 2SLS工具变量法操作</a></p><p class="categories"><a href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/">备忘录</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-01T14:07:45.000Z">2024-06-01</time></p><p class="title"><a href="/2024/06/01/3-%E4%B8%80%E5%91%A8%E4%B8%80%E5%8C%97%E6%A0%B8DDL%E8%BF%9C%E7%A6%BB%E6%88%91%EF%BC%88%E4%B8%8A%EF%BC%89/">【Stata】 一周一北核 DDL远离我 —— 数据篇</a></p><p class="categories"><a href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/">备忘录</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-05-20T14:07:45.000Z">2024-05-20</time></p><p class="title"><a href="/2024/05/20/1-Oster%E6%A3%80%E9%AA%8C%E7%BB%93%E6%9E%9C%E6%8E%92%E7%89%88%E5%8F%8A%E6%8F%8F%E8%BF%B0/">【Stata】 Oster检验结果排版及描述</a></p><p class="categories"><a href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/">备忘录</a></p></div></article></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/assets/favo.jpg" alt="LxxCandy" height="28"></a><p class="is-size-7"><span>&copy; 2024 LxxCandy</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="GitHub 下载" href="https://github.com/LxxCandy"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
