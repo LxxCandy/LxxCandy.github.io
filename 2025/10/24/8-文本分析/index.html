@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>【学习笔记】 文本分析 - LxxCandy</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#95c2e1"><meta name="application-name" content="LxxCandy"><meta name="msapplication-TileImage" content="assets/favo.jpg"><meta name="msapplication-TileColor" content="#95c2e1"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="LxxCandy"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="网课知识点汇总"><meta property="og:type" content="blog"><meta property="og:title" content="LxxCandy"><meta property="og:url" content="https://lxxcandy.github.io/"><meta property="og:site_name" content="LxxCandy"><meta property="og:description" content="网课知识点汇总"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://raw.githubusercontent.com/LxxCandy/blogpic/main/文本1.png"><meta property="article:published_time" content="2025-10-24T14:07:45.000Z"><meta property="article:modified_time" content="2025-10-26T09:21:57.779Z"><meta property="article:author" content="LxxCandy"><meta property="article:tag" content="笔记"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://raw.githubusercontent.com/LxxCandy/blogpic/main/文本1.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://lxxcandy.github.io/2025/10/24/8-%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90/"},"headline":"【学习笔记】 文本分析","image":["https://raw.githubusercontent.com/LxxCandy/blogpic/main/文本1.png"],"datePublished":"2025-10-24T14:07:45.000Z","dateModified":"2025-10-26T09:21:57.779Z","author":{"@type":"Person","name":"LxxCandy"},"publisher":{"@type":"Organization","name":"LxxCandy","logo":{"@type":"ImageObject","url":"https://lxxcandy.github.io/assets/favo.jpg"}},"description":"网课知识点汇总"}</script><link rel="canonical" href="https://lxxcandy.github.io/2025/10/24/8-%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90/"><link rel="alternate" href="/atom.xml" title="LxxCandy" type="application/atom+xml"><link rel="icon" href="/assets/favo.jpg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/assets/favo.jpg" alt="LxxCandy" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">文章</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2025-10-24T14:07:45.000Z" title="2025/10/24 22:07:45">2025-10-24</time>发表</span><span class="level-item"><time dateTime="2025-10-26T09:21:57.779Z" title="2025/10/26 17:21:57">2025-10-26</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E5%AD%A6%E7%82%B9/">学点</a></span><span class="level-item">28 分钟读完 (大约4156个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">【学习笔记】 文本分析</h1><div class="content"><blockquote>
+<p>网课知识点汇总</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="NLTK与jieba概述"><a href="#NLTK与jieba概述" class="headerlink" title="NLTK与jieba概述"></a>NLTK与jieba概述</h2><p>NLP：自然语言处理</p>
+<p>NLTK：是一套基于Python的自然语言处理工具包，可以方便地完成自然语言处理的任务</p>
+<table>
+<thead>
+<tr>
+<th>语言处理任务</th>
+<th>nltk模块</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>获取和处理语料库</td>
+<td>nltk.corpus</td>
+<td>语料库和词典的标准化接口</td>
+</tr>
+<tr>
+<td>字符串处理</td>
+<td>nltk.tokenize, nltk.stem</td>
+<td>分词，句子分解提取主干</td>
+</tr>
+<tr>
+<td>搭配发现 ，</td>
+<td>nltk.collocations</td>
+<td>用于识别搭配工具，查找单词之间的关联关系</td>
+</tr>
+<tr>
+<td>词性标识符</td>
+<td>nltk.tag</td>
+<td>包含用于词性标注的类和接口</td>
+</tr>
+<tr>
+<td>分类</td>
+<td>nltk.classify, nltk.cluster</td>
+<td>nltk.classify用类别标签标记的接口;nltk.cluster包含了许多聚类算法 如贝叶斯、EM、k-means</td>
+</tr>
+<tr>
+<td>分块</td>
+<td>nltk.chunk</td>
+<td>在不受限制的文本识别非重叠语言组的类和接口</td>
+</tr>
+<tr>
+<td>解析</td>
+<td>nltk.parse</td>
+<td>对图表、概率等解析的接口</td>
+</tr>
+<tr>
+<td>语义解释</td>
+<td>nltk.sem, nltk.inference</td>
+<td>阶逻辑，模型检验</td>
+</tr>
+<tr>
+<td>指标评测</td>
+<td>nltk.metrics</td>
+<td>精度，召回率，协议系数</td>
+</tr>
+<tr>
+<td>概率与估计</td>
+<td>nltk.probability</td>
+<td>计算频率分布、平滑概率分布的接 口</td>
+</tr>
+<tr>
+<td>应用</td>
+<td>nltk.app，nltk.chat</td>
+<td>图形化的关键词排序，分析器， WordNet查看器，聊天机器人</td>
+</tr>
+<tr>
+<td>语言学领域的工作</td>
+<td>nltk.toolbox</td>
+<td>处理SIL工具箱格式的数据</td>
+</tr>
+</tbody></table>
+<p>jieba：中文分词组件，支持以下三种分词模式</p>
+<p>1、精确模式：试图将句子最精确地切开，适合文本分析</p>
+<p>2、全模式：把句子中所有可以成词的词语都扫描出来，速度非常快，但是不能解决歧义</p>
+<p>3、搜索引擎模式：在精确模式的基础上，对长词再次切分，提高召回率，适合用于搜索引擎分词</p>
+<p>安装NLTK的方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##1、在终端使用pip命令直接安装：</span></span><br><span class="line">pip install -U nltk</span><br><span class="line"></span><br><span class="line"><span class="comment">##2、anaconda中已经预装好，直接启动jupyter-notebook， 输入不报错</span></span><br><span class="line"><span class="keyword">import</span> nltk</span><br><span class="line"></span><br><span class="line"><span class="comment">##如果希望安装单独的数据包，或者是下载全部的数据包，则需要在upyter Notebook(或者管理员账户)中执行以下操作</span></span><br><span class="line">nltk.download()  <span class="comment">#打开NLTK下载器</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##如果希望集中安装所有的选项，则需要单击【File】-&gt;【Change Download Directory】选择更新下载目录。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##如果只想安装单独的语料库</span></span><br><span class="line">nltk.download(<span class="string">&#x27;XXX&#x27;</span>)  <span class="comment">#XXX放入想下载的库</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##下载后测试是否成功，以brown为例</span></span><br><span class="line"><span class="keyword">from</span> nltk.corpus <span class="keyword">import</span> brown </span><br><span class="line">brown.words()</span><br></pre></td></tr></table></figure>
+<p>jieba库的安装</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##如果希望对中文进行分词操作，则需要借助 jieba分词工具完成。安装jieba库的方式比较简单，可以使用如下pip命令直接安装：</span></span><br><span class="line">pip install jieba</span><br><span class="line"><span class="comment">##未报错说明安装成功</span></span><br><span class="line"><span class="keyword">import</span> jieba</span><br></pre></td></tr></table></figure>
+
+<h2 id="文本预处理"><a href="#文本预处理" class="headerlink" title="文本预处理"></a>文本预处理</h2><p>文本预处理一般包括分词、词形归一化、删除停用词，具体流程如下所示：</p>
+<center><img src="https://raw.githubusercontent.com/LxxCandy/blogpic/main/文本1.png" /></center>
+
+<h2 id="分词"><a href="#分词" class="headerlink" title="分词"></a>分词</h2><p>分词是指将由连续字符组成的语句，按照一定的规则划分成一个个独立词语的过程。<br>不同的语言具有不同的语法结构。英文以空格为分隔符，中文没有形式上的分隔符。</p>
+<p>根据中文的结构特点，可以把分词算法分为以下三类：</p>
+<p>1、基于规则的分词方法：按照一定的策略将待分析的中文句子与一个“充分大的”机器词典中的词条进行匹配。</p>
+<p>2、基于统计的分词方法：它的基本思想是常用的词语是比较稳定的组合。</p>
+<p>3、基于理解的分词方法：它的基本思想是在分词的同时进行句法、语义分析，利用句法信息和语义信息来处理歧义现象。</p>
+<p>要想使用NLTK对英文句子分词，则可以调用word_tokenize()函数基于空格或标点进行划分，并返回单词列表。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sentence = <span class="string">&#x27;I like bule.&#x27;</span></span><br><span class="line"><span class="comment">##将句子切分为单词</span></span><br><span class="line">words = nltk.word_tokenize(sentence)</span><br><span class="line"><span class="comment">##或者用遇空格分隔的方式，并先替换标点</span></span><br><span class="line">sentence = <span class="string">&#x27;I like bule.&#x27;</span></span><br><span class="line">sentence = sentence.replace(<span class="string">&quot;.&quot;</span>, <span class="string">&quot; &quot;</span>)</span><br><span class="line">sentence.split(<span class="string">&quot; &quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>要想使用jieba对中文句子分词，则可以通过jieba.cut()函数进行划分，该函数接收如下三个参数：<br>1、需要分词的字符串。<br>2、cut_all参数用来控制是否采用全模式。设置为True则为全模式，False为精确模式，默认为False。<br>3、HMM参数用来控制是否使用HMM模型。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#全模式True</span></span><br><span class="line">sentence = <span class="string">&#x27;传智专修学院推出颠覆式办学模式&#x27;</span></span><br><span class="line">terms_list = jieba.cut(sentence, cut_all = <span class="literal">True</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;【全模式】：&#x27;</span>+<span class="string">&#x27;/&#x27;</span>.join(terms_list))</span><br><span class="line"><span class="comment">#【全模式】：传/智/专修/修学/学院/推出/颠覆/式/办学/模式</span></span><br><span class="line"><span class="comment">####################################################</span></span><br><span class="line"><span class="comment">#精确模式False</span></span><br><span class="line">sentence = <span class="string">&#x27;传智专修学院推出颠覆式办学模式&#x27;</span></span><br><span class="line">terms_list = jieba.cut(sentence, cut_all = <span class="literal">False</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;【精确模式】：&#x27;</span>+<span class="string">&#x27;/&#x27;</span>.join(terms_list))</span><br><span class="line"><span class="comment">#【精确模式】：传智/专修/学院/推出/颠覆/式/办学/模式</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="词性表注"><a href="#词性表注" class="headerlink" title="词性表注"></a>词性表注</h2><p>词性是对词语分类的一种方式。</p>
+<p>英文词汇：名词、形容词、动词、代词、数词、副词、介词、连词、冠词和感叹词。</p>
+<p>中文词汇：名词、动词、形容词、数词、量词、代词、介词副词、连词、感叹词、助词和拟声词。</p>
+<p>词性标注，又称词类标注，是指为分词结果中的每个词标注一个正确的词性。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##I love itcast</span></span><br><span class="line"><span class="comment">##I 人称代词  love 动词  itcast 名词</span></span><br></pre></td></tr></table></figure>
+
+<p>NLTK库中使用不同的约定来标记单词</p>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>JJ</td>
+<td>形容词</td>
+<td>special, high, good</td>
+</tr>
+<tr>
+<td>RB</td>
+<td>副词</td>
+<td>quickly, simply, hardly</td>
+</tr>
+<tr>
+<td>CC</td>
+<td>条件连词</td>
+<td>and, or</td>
+</tr>
+<tr>
+<td>DT</td>
+<td>限定词</td>
+<td>the,a</td>
+</tr>
+<tr>
+<td>MD</td>
+<td>情态动词</td>
+<td>could, should</td>
+</tr>
+<tr>
+<td>NN</td>
+<td>单数名词</td>
+<td>home, time, year</td>
+</tr>
+<tr>
+<td>NNS</td>
+<td>复数名词</td>
+<td>birds, dogs, flowers</td>
+</tr>
+<tr>
+<td>NNP</td>
+<td>专有名词单数</td>
+<td>Affica, April, Washington</td>
+</tr>
+<tr>
+<td>CD</td>
+<td>基本数量词</td>
+<td>twenty-one, second, 1997</td>
+</tr>
+<tr>
+<td>PRP</td>
+<td>人称代词</td>
+<td>I, you, he, she</td>
+</tr>
+<tr>
+<td>PRPS</td>
+<td>所有格代词</td>
+<td>my, your, his, her</td>
+</tr>
+<tr>
+<td>IN</td>
+<td>介词</td>
+<td>on,of， at,by，under</td>
+</tr>
+<tr>
+<td>TO</td>
+<td>不定词</td>
+<td>howto,whattodo</td>
+</tr>
+<tr>
+<td>UH</td>
+<td>感叹词</td>
+<td>ah,ha,wow， oh</td>
+</tr>
+<tr>
+<td>VB</td>
+<td>动词原型</td>
+<td>see，listen， speak, run</td>
+</tr>
+<tr>
+<td>VBD</td>
+<td>动词过去时</td>
+<td>did, told, made</td>
+</tr>
+<tr>
+<td>VBG</td>
+<td>动名词</td>
+<td>going,working,making</td>
+</tr>
+<tr>
+<td>VBN</td>
+<td>动词过去分词</td>
+<td>given, taken, begun</td>
+</tr>
+<tr>
+<td>WDT</td>
+<td>WH限定词</td>
+<td>which，whatever</td>
+</tr>
+</tbody></table>
+<p>如果希望给单词标注词性，则需要先确保已经下载了averaged_perceptron_tagger模块，然后再调用pos_tag()函数进行标注。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">words = nltk.word_tokenize(<span class="string">&#x27;I love blue&#x27;</span>)</span><br><span class="line">nltk.pos_tag(words)</span><br><span class="line"><span class="comment">#[(&#x27;I&#x27;, &#x27;PRP&#x27;), (&#x27;love&#x27;, &#x27;VBP&#x27;), (&#x27;blue&#x27;, &#x27;JJ&#x27;)]</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="词形归一化"><a href="#词形归一化" class="headerlink" title="词形归一化"></a>词形归一化</h2><p>在<strong>英文中</strong>，一个单词常常是另一个单词的变种。一般在信息检索和文本挖据时，需要对一个词的不同形态进行规范化，以提高文本处理的效率。</p>
+<p>词形还原是去除词缀以获得单词的基本形式。这个基本形式称为根词，而不是词干。根词始终存在于词典中，词干不一定是标准的单词，它可能不存在于词典中。</p>
+<p>词根：look 一般进行时：looking 一般过去时：looked</p>
+<p>词形规范化过程主要包括两种：词干提取和词形还原。</p>
+<p>词干提取：是指删除不影响词性的词缀，得到单词词干的过程</p>
+<p>词形还原：能够捕捉基于词根的规范单词形式</p>
+<p>1、目前最受欢迎的就是波特词干提取器，它是基于波特词干算法来提取词干的，这些算法都集中在PorterStemmer类中。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> nltk.stem.porter <span class="keyword">import</span> PorterStemmer</span><br><span class="line">porter_stem = PorterStemmer()</span><br><span class="line">porter_stem.stem(<span class="string">&#x27;watched&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>2、还可以用兰卡斯特词干提取器，它是基于兰卡斯特词干算法来提取词干的，这些算法都集中在LancasterStemmer类中。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> nltk.stem.lancaster <span class="keyword">import</span> LancasterStemmer</span><br><span class="line">lancaster_stem = LancasterStemmer()</span><br><span class="line">lancaster_stem.stem(<span class="string">&#x27;jumped&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>3、还有一些其它的词干器，比如 SnowballStemmer，它除了支持英文以外，还支持其它13种不同的语言。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> nltk.stem <span class="keyword">import</span> SnowballStemmer</span><br><span class="line">snowball_stem = SnowballStemmer(<span class="string">&#x27;english&#x27;</span>)</span><br><span class="line">snowball_stem.stem(<span class="string">&#x27;listened&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>4、NLTK库中提供了一个强大的还原模块，它使用WordNetLemmatizer类来获得根词，使用前需要确保已经下载了wordnet语料库。lemmatize()方法会比对wordnet语料库，并采用递归技术删除词缀，直至在词汇网络中找到匹配项，最终返回输入词的基本形式。如果没有找到匹配项，则直接返回输入词，不做任何变化。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#导入模块</span></span><br><span class="line"><span class="keyword">from</span> nltk.stem <span class="keyword">import</span> WordNetLemmatizer</span><br><span class="line"><span class="comment">#创建对象</span></span><br><span class="line">wordnet_lem = WordNetLemmatizer()</span><br><span class="line"><span class="comment">#归一化</span></span><br><span class="line">wordnet_lem.lemmatize(<span class="string">&#x27;books&#x27;</span>)</span><br><span class="line">wordnet_lem.lemmatize(<span class="string">&#x27;went&#x27;</span>)</span><br><span class="line"><span class="comment">#单词went并没有还原，这主要是因为它具有多种词性，went作为动词使用时，代表单词 go的过去式，但是作为名词使用的话，它表示的是人名文特。</span></span><br><span class="line"><span class="comment">#可以直接在词形还原时指定词性，也就是说在调用lemmatize()方法时将词性传入pos参数。</span></span><br><span class="line"><span class="comment">#指定went的词性为动词</span></span><br><span class="line">wordnet_lem.lemmatize(<span class="string">&#x27;went&#x27;</span>,pos=<span class="string">&#x27;v&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="删除停用词"><a href="#删除停用词" class="headerlink" title="删除停用词"></a>删除停用词</h2><p>停用词是指在信息检索中，为节省存储空间和提高搜索效率，在处理自然语言文本之前或之后会自动过滤掉某些没有具体意义的字或词。比如英文中的I、the，中文中的啊。</p>
+<p>如果直接用包含大量停用词的文本作为分析对象，则可能会导致分析结果存在较大偏差通常在处理过程中会将它们从文本中删除。</p>
+<p>停用词都是人工输入、非自动化生成的，生成后的停用词会形成一个停用词表，但是并没有一个明确的停用词表能够适用于所有的工具。</p>
+<p>对于中文的停用词，可以参考中文停用词库、哈工大停用词表、百度停用词列表。对于其它语言来说，可以参照 <a target="_blank" rel="noopener" href="https://www.ranks.nl/stopwords%E8%BF%9B%E8%A1%8C%E4%BA%86%E8%A7%A3%E3%80%82">https://www.ranks.nl/stopwords进行了解。</a></p>
+<p>NLTK库里面有一个标准的停用词列表，在使用之前要确保已经下载了stopwords语料库，并且用import语句导入stopwords模块。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##下载语料库</span></span><br><span class="line"><span class="keyword">import</span> nltk</span><br><span class="line">nltk.download(<span class="string">&#x27;stopwords&#x27;</span>)</span><br><span class="line"><span class="comment">##导入停词列表</span></span><br><span class="line"><span class="keyword">from</span> nltk.corpus <span class="keyword">import</span> stopwords</span><br><span class="line"><span class="comment">##文本</span></span><br><span class="line">text =<span class="string">&#x27;Python is a structured and powerful object-oriented programming language.&#x27;</span></span><br><span class="line"><span class="comment">##分词</span></span><br><span class="line">words = nltk.word_tokenize(text)</span><br><span class="line"><span class="comment">##定义语言为英语</span></span><br><span class="line">stop_words = stopwords.words(<span class="string">&#x27;english&#x27;</span>)</span><br><span class="line"><span class="comment">##在words中循环定义word，如果word不在停词表stop_words中，则append入list列表中</span></span><br><span class="line">remain_list = []</span><br><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> words:</span><br><span class="line">    <span class="keyword">if</span> word <span class="keyword">not</span> <span class="keyword">in</span> stop_words:</span><br><span class="line">        remain_list.append(word)</span><br><span class="line"><span class="built_in">print</span>(remain_list)</span><br><span class="line"><span class="comment">##[&#x27;Python&#x27;, &#x27;structured&#x27;, &#x27;powerful&#x27;, &#x27;object-oriented&#x27;, &#x27;programming&#x27;, &#x27;language&#x27;, &#x27;.&#x27;]</span></span><br></pre></td></tr></table></figure>
+<h2 id="文本情感分析"><a href="#文本情感分析" class="headerlink" title="文本情感分析"></a>文本情感分析</h2><p>文本情感分析，又称为倾向性分析和意见挖掘是指对带有情感色彩的主观性文本进行分析、处理、归纳和推理的过程。</p>
+<p>情感分析还可以细分为情感极性（倾向）分析、情感程度分析及主客观分析等。其中，情感极性分析的目的在于，对文本进行褒义、贬义、中性的判断，比如对于“喜爱”和“厌恶”这两个词，就属于不同的情感倾向。</p>
+<p>目前，常见的情感极性分析方法主要分为两种：基于情感词典和基于机器学习。</p>
+<p><strong>情感词典</strong>：是最简单的情感极性分析的方式，通过制定一系列的情感词典和规则，对文本进行段落拆解句法分析，计算情感值，最后通过情感值来作为文本的情感倾向依据。使用情感词典的方式虽然简单粗暴，但是非常实用，不过一旦遇到一些新词或者特殊词，就无法识别出来，扩展性非常不好。</p>
+<p>第一步：对文本进行分词操作，从中找出情感词、否定词以及程度副词。</p>
+<p>第二步：判断每个情感词之前是否有否定词及程度副词，将它之前的否定词和程度副词划分为一组。</p>
+<p>第三步：将所有组的得分加起来，得分大于0的归于正向，小于0的归于负向。</p>
+<p>机器学习：将目标情感分为两类：正、负或者是根据不同的情感程度划分为15类，然后对训练文本进行人工标注，进行有监督的机器学习过程。其中，朴素贝叶斯是经典的机器学习算法之一，也是为数不多的基于概率论的分类算法。朴素贝叶斯的思想基础是：对于给出的待分类项，求解在此项出现的条件下各个类别出现的概率，哪个最大，就认为此待分类项属于哪个类别。nltk.classify模块中的NaiveBayesClassifier类实现了朴素贝叶斯分类算法，该类中有一个类方法 train(),主要用于根据训练集来训练模型。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#准备用于训练的文本</span></span><br><span class="line">text_one = <span class="string">&#x27;This is a wonderful book.&#x27;</span></span><br><span class="line">text_two = <span class="string">&#x27;I like reading this book very much.&#x27;</span></span><br><span class="line">text_thr = <span class="string">&#x27;This book reads well.&#x27;</span></span><br><span class="line">text_fou = <span class="string">&#x27;This book is not good.&#x27;</span></span><br><span class="line">text_fiv = <span class="string">&#x27;This is a very bad book.&#x27;</span></span><br><span class="line"><span class="comment">#导入模块</span></span><br><span class="line"><span class="keyword">from</span> nltk.classify <span class="keyword">import</span> NaiveBayesClassifier</span><br><span class="line"><span class="comment">#定义文本预处理方法</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">pret_text</span>(<span class="params">text</span>):</span><br><span class="line">    <span class="comment">#文本预处理包括：分词、词形归一化、删除停用词</span></span><br><span class="line">    <span class="comment">#分词</span></span><br><span class="line">    words = nltk.word_tokenize(text)</span><br><span class="line">    <span class="comment">#创建对象</span></span><br><span class="line">    wordnet_lem = WordNetLemmatizer()</span><br><span class="line">    <span class="comment">#遍历words进行归一化</span></span><br><span class="line">    words = [wordnet_lem.lemmatize(word) <span class="keyword">for</span> word <span class="keyword">in</span> words]</span><br><span class="line">    <span class="comment">#删除停用词</span></span><br><span class="line">    remain_list = [word <span class="keyword">for</span> word <span class="keyword">in</span> words <span class="keyword">if</span> word <span class="keyword">not</span> <span class="keyword">in</span> stopwords.words(<span class="string">&#x27;english&#x27;</span>)]</span><br><span class="line">    <span class="comment">#展示结果</span></span><br><span class="line">    <span class="built_in">print</span>(remain_list)</span><br><span class="line">    <span class="comment">#遍历词 得到对应的词是否在文本中</span></span><br><span class="line">    <span class="keyword">return</span> &#123;word: <span class="literal">True</span> <span class="keyword">for</span> word <span class="keyword">in</span> remain_list&#125;</span><br><span class="line"><span class="comment">#查看处理结果</span></span><br><span class="line">pret_text(text_one)</span><br><span class="line"><span class="comment">##[&#x27;This&#x27;, &#x27;wonderful&#x27;, &#x27;book&#x27;, &#x27;.&#x27;]</span></span><br><span class="line"><span class="comment">###################</span></span><br><span class="line"><span class="comment">#构建训练文本,正向为1，负向为-1</span></span><br><span class="line">train_data = [[pret_text(text_one),<span class="number">1</span>],[pret_text(text_two),<span class="number">1</span>],[pret_text(text_thr),<span class="number">1</span>],[pret_text(text_fou),-<span class="number">1</span>],[pret_text(text_fiv),-<span class="number">1</span>]]</span><br><span class="line">train_data</span><br><span class="line"><span class="comment">#训练得到模型</span></span><br><span class="line">model = NaiveBayesClassifier.train(train_data)</span><br><span class="line"><span class="comment">#模型测试1</span></span><br><span class="line">test_text1 = <span class="string">&#x27;I like this movie very much&#x27;</span></span><br><span class="line">model.classify(pret_text(test_text1))</span><br><span class="line"><span class="comment">##1</span></span><br><span class="line"><span class="comment">#模型测试2</span></span><br><span class="line">test_text2 = <span class="string">&#x27;this film is very bad&#x27;</span></span><br><span class="line">model.classify(pret_text(test_text2))</span><br><span class="line"><span class="comment">##-1</span></span><br></pre></td></tr></table></figure>
+<h2 id="文本相似度"><a href="#文本相似度" class="headerlink" title="文本相似度"></a>文本相似度</h2><p>文本映射到向量，再利用余弦相似度计算的一般实现步骤如下：</p>
+<p>第一步：通过特征提取的模型或手动实现，找出这两篇文章的关键词。</p>
+<p>第二步：从每篇文章中各取出若干个关键词，再把这些关键词合并成一个集合，然后计算每篇文章中各个词对于这个集合中的关键词的词频。</p>
+<p>第三步：生成两篇文章中各自的词频向量。</p>
+<p>第四步：计算两个向量的余弦相似度，值越大侧表示越相似。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#导入模块</span></span><br><span class="line"><span class="keyword">from</span> nltk <span class="keyword">import</span> FreqDist</span><br><span class="line"><span class="comment">#准备文本</span></span><br><span class="line">text1 = <span class="string">&quot;John likes to watch movies&quot;</span></span><br><span class="line">text2 = <span class="string">&quot;John also likes to watch football games&quot;</span></span><br><span class="line"><span class="comment">#加总</span></span><br><span class="line">all_text = text1 + <span class="string">&#x27; &#x27;</span>+ text2</span><br><span class="line"><span class="comment">#分词</span></span><br><span class="line">words = nltk.word_tokenize(all_text)</span><br><span class="line"><span class="comment">#创建FreqDist对象，记录每个词出现的频率</span></span><br><span class="line">freq_dist = FreqDist(words)</span><br><span class="line">freq_dist</span><br><span class="line"><span class="comment">#取出John</span></span><br><span class="line">freq_dist[<span class="string">&#x27;John&#x27;</span>]</span><br><span class="line"><span class="comment">#取出里面5个常用的单词</span></span><br><span class="line">most_comman_words = freq_dist.most_common(<span class="number">5</span>)</span><br><span class="line"><span class="comment">#展示</span></span><br><span class="line">most_comman_words</span><br><span class="line"><span class="comment">#找到单词所处的位置</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">find_postion</span>(<span class="params">comman_words</span>):</span><br><span class="line">    <span class="comment">#查找常用单词的位置</span></span><br><span class="line">    result = &#123;&#125;</span><br><span class="line">    pos = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> comman_words:</span><br><span class="line">        result[word[<span class="number">0</span>]] = pos</span><br><span class="line">        pos += <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"><span class="comment">#调用方法，记录常用单词对应的位置</span></span><br><span class="line">pos_dict = find_postion(most_comman_words)</span><br><span class="line">pos_dict</span><br><span class="line"><span class="comment">#文本转化为词频向量</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">text_to_vector</span>(<span class="params">words</span>):</span><br><span class="line">    <span class="comment">#初始向量</span></span><br><span class="line">    freq_vec = [<span class="number">0</span>] * <span class="number">5</span></span><br><span class="line">    <span class="comment">#在常用单词的列表上计算词频</span></span><br><span class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> words:</span><br><span class="line">        <span class="keyword">if</span> word <span class="keyword">in</span> <span class="built_in">list</span>(pos_dict.keys()):</span><br><span class="line">            freq_vec[pos_dict[word]] += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> freq_vec</span><br><span class="line"><span class="comment">#获取text的词频向量</span></span><br><span class="line">vec1 = text_to_vector(nltk.word_tokenize(text1))</span><br><span class="line">vec1</span><br><span class="line"><span class="comment">##</span></span><br><span class="line">vec2 = text_to_vector(nltk.word_tokenize(text2))</span><br><span class="line">vec2</span><br><span class="line"><span class="comment">#计算文本的相似度</span></span><br><span class="line"><span class="keyword">from</span> nltk.cluster.util <span class="keyword">import</span> cosine_distance</span><br><span class="line">cos_dist = cosine_distance(vec1,vec2)</span><br><span class="line">cos_similarity = <span class="number">1</span> - cos_dist</span><br><span class="line">cos_similarity</span><br></pre></td></tr></table></figure>
+<h2 id="参考来源"><a href="#参考来源" class="headerlink" title="参考来源"></a>参考来源</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1w5411s7FU?spm_id_from=333.788.player.switch&vd_source=7ec7928f0f3a9f6f81d43028ee0cd7b5&p">https://www.bilibili.com/video/BV1w5411s7FU?spm_id_from=333.788.player.switch&amp;vd_source=7ec7928f0f3a9f6f81d43028ee0cd7b5&amp;p</a></p>
+<hr>
+<p><font color="#2b7cd3" size="4" face="微软雅黑">作话：不属于0基础，还是要先了解基本的python代码</font></p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>【学习笔记】 文本分析</p><p><a href="https://lxxcandy.github.io/2025/10/24/8-文本分析/">https://lxxcandy.github.io/2025/10/24/8-文本分析/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>LxxCandy</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2025-10-24</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2025-10-26</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2025/08/11/7-%E7%88%AC%E8%99%AB%E9%80%9F%E6%88%90/"><span class="level-item">【学习笔记】 爬虫速成</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="SOHUCS" sid="2025/10/24/8-文本分析/"></div><script charset="utf-8" src="https://changyan.sohu.com/upload/changyan.js"></script><script>window.changyan.api.config({appid: 'cyxiyLaBg',conf: 'prod_ab6b2b4a4f094ae107199274d893073c'});</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/assets/favo.jpg" alt="LxxCandy"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">LxxCandy</p><p class="is-size-6 is-block">种一棵树最好的时间是十年前，其次是现在</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">8</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">2</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">3</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/LxxCandy" target="_blank" rel="me noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="小红书" href="https://www.xiaohongshu.com/user/profile/5b876062faff1300010c7166"><img src="\image\xhs.svg" style="height: 20px;width: 20px;"></a></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/"><span class="level-start"><span class="level-item">备忘录</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%AD%A6%E7%82%B9/"><span class="level-start"><span class="level-item">学点</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li></ul></div></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2025/10/"><span class="level-start"><span class="level-item">十月 2025</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/08/"><span class="level-start"><span class="level-item">八月 2025</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/07/"><span class="level-start"><span class="level-item">七月 2025</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/12/"><span class="level-start"><span class="level-item">十二月 2024</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/06/"><span class="level-start"><span class="level-item">六月 2024</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/05/"><span class="level-start"><span class="level-item">五月 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Stata/"><span class="tag">Stata</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%86%99%E4%BD%9C/"><span class="tag">写作</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AC%94%E8%AE%B0/"><span class="tag">笔记</span><span class="tag">5</span></a></div></div></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#NLTK与jieba概述"><span class="level-left"><span class="level-item">NLTK与jieba概述</span></span></a></li><li><a class="level is-mobile" href="#文本预处理"><span class="level-left"><span class="level-item">文本预处理</span></span></a></li><li><a class="level is-mobile" href="#分词"><span class="level-left"><span class="level-item">分词</span></span></a></li><li><a class="level is-mobile" href="#词性表注"><span class="level-left"><span class="level-item">词性表注</span></span></a></li><li><a class="level is-mobile" href="#词形归一化"><span class="level-left"><span class="level-item">词形归一化</span></span></a></li><li><a class="level is-mobile" href="#删除停用词"><span class="level-left"><span class="level-item">删除停用词</span></span></a></li><li><a class="level is-mobile" href="#文本情感分析"><span class="level-left"><span class="level-item">文本情感分析</span></span></a></li><li><a class="level is-mobile" href="#文本相似度"><span class="level-left"><span class="level-item">文本相似度</span></span></a></li><li><a class="level is-mobile" href="#参考来源"><span class="level-left"><span class="level-item">参考来源</span></span></a></li></ul></div></div><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-10-24T14:07:45.000Z">2025-10-24</time></p><p class="title"><a href="/2025/10/24/8-%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90/">【学习笔记】 文本分析</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E7%82%B9/">学点</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-08-11T14:07:45.000Z">2025-08-11</time></p><p class="title"><a href="/2025/08/11/7-%E7%88%AC%E8%99%AB%E9%80%9F%E6%88%90/">【学习笔记】 爬虫速成</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E7%82%B9/">学点</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-07-16T14:07:45.000Z">2025-07-16</time></p><p class="title"><a href="/2025/07/16/6-Python%E5%85%A5%E9%97%A8/">【学习笔记】 Python入门</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E7%82%B9/">学点</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-12-29T14:07:45.000Z">2024-12-29</time></p><p class="title"><a href="/2024/12/29/4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">【学习笔记】 吴恩达-机器学习</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E7%82%B9/">学点</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-12-29T14:07:45.000Z">2024-12-29</time></p><p class="title"><a href="/2024/12/29/5-%E6%9D%8E%E6%80%80%E7%A5%96%E3%80%8A%E7%AE%A1%E7%90%86%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95%E8%AE%BA%E3%80%8B/">【学习笔记】 李怀祖《管理研究方法论》</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E7%82%B9/">学点</a></p></div></article></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/assets/favo.jpg" alt="LxxCandy" height="28"></a><p class="is-size-7"><span>&copy; 2025 LxxCandy</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="GitHub 下载" href="https://github.com/LxxCandy"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
